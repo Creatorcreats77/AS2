@@ -1,3 +1,17 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.bg-cyan{
+    background-color: #02BCD1;
+}
+.text-cyan{
+    color: #02BCD1;
+}
+.bg-gray{
+    background-color: #F7F7F7;
+}
 .bg-image {
     background-image: url(../img/banner-bg.jpg);
     background-color: #cccccc;
@@ -8,8 +22,9 @@
 }
 
 
-.bg-image4 {
-    background-image: url(../img/china.jpg);
+
+.bg-image2 {
+    background-image: url(../img/pricing-bg.jpg);
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -52,6 +67,11 @@ a.hover-1:hover::before {
     height: 2px;
     background-color: orange!important;
     transition: .5s all;
+}
+
+@media  (max-width: 576px){ 
+    
+    
 }
 
 @keyframes hover-1 {
