@@ -12,6 +12,11 @@ body{
 .bg-gray{
     background-color: #F7F7F7;
 }
+.gradient{
+    background: rgb(97,8,185);
+    background: linear-gradient(90deg, rgba(97,8,185,1) 0%, rgba(55,8,185,1) 52%, rgba(38,0,255,1) 100%);
+}
+
 .bg-image {
     background-image: url(../img/banner-bg.jpg);
     background-color: #cccccc;
@@ -31,71 +36,89 @@ body{
     background-position: center;
     background-size: cover;
 }
-.bg-image5 {
-    background-image: url(../img/plane_1.jpg);
-    background-color: #cccccc;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
+
+.shadow1{
+    box-shadow: 10px 10px 10px rgba(103, 14, 192, 0.4);
 }
-
-.bg-shadow {
-    background-color: rgba(0, 0, 0, .5);
+.shadow1:hover{
+    box-shadow: 30px 30px 30px rgba(84, 47, 213, 0.7);
 }
-
-a.hover-1 {
-    position: relative;
-    color: white!important;
-}
-
-a.hover-1:hover {
-    color: orange!important;
-}
-
-
-a.hover-1:hover::before {
-    content: '';
-    position: absolute;
-    animation: hover-1 5s infinite;
-    top: 35px;
-    width: 106px;
-    height: 2px;
-    background-color: orange!important;
-    transition: .5s all;
-}
-
-@media screen and (max-width: 500px){ 
+@media screen and (max-width: 800px){ 
     .h6{
         font-size: small;
     };
- 
 }
 
-@media screen and (min-width: 500px){ 
+@media screen and (min-width: 800px){ 
     .h6{
         font-size: medium;
-        
     }; 
-    
 }
 
-@keyframes hover-1 {
-    0% {
-        width: 0;
-        height: 0;
-    }
-    50% {
-        width: 106px;
-        height: 2px;
-    }
-    75% {
-        width: 0;
-        height: 0;
-    }
-    100% {
-        width: 0;
-        height: 0;
-    }
-
+@media screen and (max-width: 800px){ 
+    .h1{
+        font-size: x-large;
+    };
 }
+
+
+@media screen and (min-width: 800px){ 
+    .h1{
+        font-size: xx-large;
+    }; 
+}
+
+@media screen and (max-width: 800px){ 
+    .h3{
+        font-size: large;
+    };
+}
+
+
+@media screen and (min-width: 800px){ 
+    .h3{
+        font-size: x-large;
+    }; 
+}
+
+/* HTML: <div class="loader"></div> */
+/* HTML: <div class="loader"></div> */
+.loader {
+    --s: 20px;
+    height: calc(var(--s)*0.9);
+    width: calc(var(--s)*5);
+   --v1:transparent,#000 0.5deg 108deg,#0000 109deg;
+   --v2:transparent,#000 0.5deg  36deg,#0000  37deg;
+   -webkit-mask:
+     conic-gradient(from 54deg  at calc(var(--s)*0.68) calc(var(--s)*0.57),var(--v1)),
+     conic-gradient(from 90deg  at calc(var(--s)*0.02) calc(var(--s)*0.35),var(--v2)),
+     conic-gradient(from 126deg at calc(var(--s)*0.5)  calc(var(--s)*0.7) ,var(--v1)),
+     conic-gradient(from 162deg at calc(var(--s)*0.5)  0                  ,var(--v2));
+   -webkit-mask-size: var(--s) var(--s);
+   -webkit-mask-composite: xor,destination-over;
+           mask-composite: exclude,add;
+   -webkit-mask-repeat:repeat-x;
+   background:linear-gradient(#ffb940 0 0) left/0% 100% #ddd no-repeat;
+   animation: l20 2s infinite linear;
+ }
+ @keyframes l20 {
+     90%,100% {background-size:100% 100%}
+ }
+
+
+
+.rainbow:hover{
+   background-image: linear-gradient(90deg, #00ccff 0%, #0a6ec0 49%, #045f7a 80%, #08418b 100%);
+   animation:slidebg 2s linear infinite;
+}
+.rainbow-1:hover{
+    background-image: linear-gradient(90deg, #b22cff 0%, #5f0ac0 49%, #11369b 80%, #2252d4 100%);
+    animation:slidebg 2s linear infinite;
+ }
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
+
