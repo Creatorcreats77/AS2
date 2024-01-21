@@ -39,10 +39,6 @@ body{
     background-position: center;
     background-size: cover;
 }
-body{
-    margin: 0;
-    padding: 0;
-}
 
 .bg-shadow {
     background-color: rgba(0, 0, 0, .5);
@@ -69,8 +65,18 @@ a.hover-1:hover::before {
     transition: .5s all;
 }
 
-@media  (max-width: 576px){ 
-    
+@media screen and (max-width: 500px){ 
+    .h6{
+        font-size: small;
+    };
+ 
+}
+
+@media screen and (min-width: 500px){ 
+    .h6{
+        font-size: medium;
+        
+    }; 
     
 }
 
