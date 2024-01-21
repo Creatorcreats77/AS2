@@ -21,7 +21,8 @@
 </head>
 <body class="overflow-auto">
     <div class="bg-image text-white">
-            <div class="border-bottom">
+            <div class="bg-shadow">
+              <div class="border-bottom">
                 <div class="container-xl">
                   <nav class="navbar navbar-expand-lg" style="color: rgba(0, 0, 0, 1);">
                         <div class="container-fluid">
@@ -93,6 +94,7 @@
                     </div>
                   </div>
                 </div>
+            </div>
             </div>
         </div>
         <div class="bg-gray shadow1">
@@ -203,17 +205,19 @@
                 </div>
               </div>
                   <div class="bg-image2">
-                    <div class="container-xl">
-                      <div class="py-5 pb-5">
+                    <div class="bg-shadow">
+                      <div class="container-xl">
                         <div class="py-5 pb-5">
-                          <div class="pb-5">
+                          <div class="py-5 pb-5">
                             <div class="pb-5">
-                              <div class="text-center text-white pb-5">
-                                <div class="h1 py-2">
-                                  Cloud Hosting Plans
-                                </div>
-                                <div class="h6">
-                                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni modi autem molestiae aliquam impedit repudiandae optio earum? Suscipit amet, quidem dolores excepturi illum dolor numquam labore! Commodi similique temporibus dolorum!
+                              <div class="pb-5">
+                                <div class="text-center text-white pb-5">
+                                  <div class="h1 py-2">
+                                    Cloud Hosting Plans
+                                  </div>
+                                  <div class="h6">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni modi autem molestiae aliquam impedit repudiandae optio earum? Suscipit amet, quidem dolores excepturi illum dolor numquam labore! Commodi similique temporibus dolorum!
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -512,12 +516,106 @@
                     </div>
                   </div>
                 </div>
+                <footer>
+                  <div class="bg-image2">
+                    <div class="bg-shadow2">
+                      <div class="container-xl">
+                        <div class="h1 text-center text-white pt-5">
+                          We work friendly
+                        </div>
+                        <div class="h6 text-center text-white pt-2">
+                          Join us your drea is our work. We will do everything is possible for our workers!
+                        </div>
+                        <div class="row align-items-center">
+                          <div class="col-12 col-lg-6 p-5">
+                            <div id="main-slider2" class="splide">
+                              <div class="splide__track">
+                                  <ul class="splide__list">
+                                      <li class="splide__slide rounded-circle"><img src="./img/team-02.jpg" alt="Slide 2" class="img-fluid"></li>
+                                      <li class="splide__slide rounded-circle"><img src="./img/team-01.jpg" alt="Slide 1" class="img-fluid"></li>
+                                      <li class="splide__slide rounded-circle"><img src="./img/team-03.jpg" alt="Slide 1" class="img-fluid"></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          </div>
+                          <div class="col-12 col-lg-6 p-5">
+                            <div id="main-slider" class="splide">
+                              <div class="splide__track">
+                                  <ul class="splide__list">
+                                      <li class="splide__slide"><img src="./img/team-01.jpg" alt="Slide 1" class="img-fluid"></li>
+                                      <li class="splide__slide"><img src="./img/team-03.jpg" alt="Slide 1" class="img-fluid"></li>
+                                      <li class="splide__slide"><img src="./img/team-02.jpg" alt="Slide 2" class="img-fluid"></li>   
+                                  </ul>
+                              </div>
+                          </div>
+                          <div id="thumbnail-slider" class="splide">
+                              <div class="splide__track">
+                                  <ul class="splide__list">
+                                      <li class="splide__slide"><img src="./img/team-01.jpg" alt="Thumbnail 1" class="img-fluid"></li>
+                                      <li class="splide__slide"><img src="./img/team-02.jpg" alt="Thumbnail 2" class="img-fluid"></li>
+                                      <li class="splide__slide"><img src="./img/team-03.jpg" alt="Slide 1" class="img-fluid"></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </footer>
     <script src="./js/aos.js"></script>
     <script>
       AOS.init();
     </script>
     <script src="./js/fancybox.umd.js"></script>
     <script src="./js/splide.min.js"></script>
+    <script>
+      var main = new Splide('#main-slider', {
+          type: 'loop',
+          heightRatio: 1,
+          pagination: false,
+          arrows: false,
+          cover: true,
+      });
+      var main2 = new Splide('#main-slider2', {
+          type: 'loop',
+          heightRatio: 1,
+          pagination: false,
+          arrows: false,
+          cover: true,
+      });
+
+      var thumbnails = new Splide('#thumbnail-slider', {
+        type:"loop",
+          rewind: true,
+          fixedWidth: 104,
+          fixedHeight: 58,
+          isNavigation: true,
+          gap: 10,
+          focus: 'center',
+          pagination: false,
+          cover: true,
+          autoplay: {
+                delay: 200,
+            },
+          dragMinThreshold: {
+              mouse: 4,
+              touch: 10,
+          },
+          breakpoints: {
+              640: {
+                  fixedWidth: 66,
+                  fixedHeight: 38,
+              },
+          },
+      });
+
+      main.sync(thumbnails);
+      main.mount();
+      main2.sync(thumbnails);
+      main2.mount();
+      thumbnails.mount();
+  </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
