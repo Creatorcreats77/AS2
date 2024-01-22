@@ -48,6 +48,9 @@ body{
 .shadow1:hover{
     box-shadow: 30px 30px 30px rgba(84, 47, 213, 0.9);
 }
+.cursor:hover{
+    cursor:grab;
+}
 
 @media screen and (max-width: 800px){ 
     .h6{

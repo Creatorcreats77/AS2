@@ -3,93 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Splide.js Slider</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./css/aos.css">
     <link rel="stylesheet" href="./css/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/fancybox.css">
     <link rel="stylesheet" href="./css/splide.min.css">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/splide.min.js"></script>
+    <link rel="stylesheet" href="./css/socials.css">
 </head>
 <body>
 
-    <!-- Main Slider -->
-    <div class="container-xl">
-        <div class="text-center">
-            <div id="main-slider" class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <!-- Your main slider content goes here -->
-                        <li class="splide__slide"><img class="img-fluid" src="./img/team-01.jpg" alt="Slide 1"></li>
-                        <li class="splide__slide"><img class="img-fluid" src="./img/team-02.jpg" alt="Slide 2"></li>
-                        <!-- Add more slides as needed -->
-                    </ul>
-                </div>
-            </div>
-        
-            <!-- Thumbnail Slider -->
-            <div id="thumbnail-slider" class="splide">
-                <div class="splide__track">
-                    <ul class="splide__list">
-                        <!-- Your thumbnail slider content goes here -->
-                        <li class="splide__slide"><img class="img-fluid" src="./img/team-01.jpg" alt="Thumbnail 1"></li>
-                        <li class="splide__slide"><img class="img-fluid" src="./img/team-02.jpg" alt="Thumbnail 2"></li>
-                        <!-- Add more thumbnails as needed -->
-                    </ul>
-                </div>
-            </div>
+
+        <div class="container-xl">
+            <a href="./img/team-02.jpg" data-fancybox data-caption="Single image"><img src="./img/team-02.jpg" alt="Slide 2" class="img-fluid"></a>
         </div>
-    </div>
 
-    <!-- Include your script with the Splide configuration -->
+
+
+
+    <script src="./js/fancybox.umd.js"></script>
     <script>
-        const splide = new Splide( '.splide', {
-  type   : 'loop',
-  drag   : 'free',
-  focus  : 'center',
-  autoplay: "true",
-  perPage: 1,
-  autoScroll: {
-    speed: 1,
+Fancybox.bind("[data-fancybox]", {
+  on: {
+    done: (fancybox, slide) => {
+      if (fancybox.isCurrentSlide(slide)) {
+        console.log(
+          `The content of the current slide #${slide.index} is loaded and revealed`
+        );
+      } else {
+        console.log(
+          `The content of the slide #${slide.index} is preloaded and revealed`
+        );
+      }
+    },
   },
-} );
-
-splide.mount();
-
-
-        // var main = new Splide('#main-slider', {
-        //     type: 'fade',
-        //     heightRatio: 1,
-        //     pagination: false,
-        //     arrows: false,
-        //     cover: true,
-        // });
-
-        // var thumbnails = new Splide('#thumbnail-slider', {
-        //     rewind: true,
-        //     fixedWidth: 70,
-        //     fixedHeight: 58,
-        //     isNavigation: true,
-        //     gap: 10,
-        //     focus: 'center',
-        //     pagination: false,
-        //     cover: true,
-        //     dragMinThreshold: {
-        //         mouse: 4,
-        //         touch: 10,
-        //     },
-        //     breakpoints: {
-        //         640: {
-        //             fixedWidth: 66,
-        //             fixedHeight: 38,
-        //         },
-        //     },
-        // });
-
-        // main.sync(thumbnails);
-        // main.mount();
-        // thumbnails.mount();
+});
     </script>
+    <script src="./js/splide.min.js"></script>
+    <script>
+      var main = new Splide('#main-slider', {
+          type: 'loop',
+          heightRatio: 1,
+          pagination: false,
+          arrows: false,
+          cover: true,
+      });
+      var main2 = new Splide('#main-slider2', {
+          type: 'loop',
+          heightRatio: 1,
+          pagination: false,
+          arrows: false,
+          cover: true,
+      });
+
+      var thumbnails = new Splide('#thumbnail-slider', {
+        type:"loop",
+          rewind: true,
+          fixedWidth: 104,
+          fixedHeight: 58,
+          isNavigation: true,
+          gap: 10,
+          focus: 'center',
+          pagination: false,
+          cover: true,
+          autoplay: {
+                delay: 200,
+            },
+          dragMinThreshold: {
+              mouse: 4,
+              touch: 10,
+          },
+          breakpoints: {
+              640: {
+                  fixedWidth: 66,
+                  fixedHeight: 38,
+              },
+          },
+      });
+
+      main.sync(thumbnails);
+      main.mount();
+      main2.sync(thumbnails);
+      main2.mount();
+      thumbnails.mount();
+  </script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
