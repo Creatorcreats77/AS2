@@ -15,12 +15,26 @@
       ::placeholder {
         color: rgba(255, 255, 255, 0.4);
       }
-
+      .nav {
+            position: fixed; 
+            top: 270px;
+            left: 0;
+            padding: 10px;
+            z-index: 1000;
+        }
       
     </style>
 
 </head>
+
 <body class="overflow-auto">
+  <div class="nav gradient rounded-end-circle align-items-center">
+    <input type="color" id="colorPicker" style="display: none;" class="me-3">
+    <span  onclick="toggleColorPicker()">
+      <i class="bi bi-gear h1 text-white pe-2"></i>
+    </span>
+    
+</div>
     <div class="bg-image text-white">
             <div class="bg-shadow">
               <div class="border-bottom">
@@ -29,7 +43,9 @@
                         <div class="container-fluid">
                           <a class="navbar-brand text-white" href="#"><span class="h1">Host</span> <span class="h3">cloud</span></a>
                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
+                            <span>
+                              <i class="bi bi-filter-right text-white h1"></i>
+                            </span>
                           </button>
                           <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav  ms-auto me-5 ">
@@ -564,7 +580,7 @@
                   </div>
                 </div>
                 <footer>
-                  <div class="bg-image2">
+                  <div class="bg-image2 ">
                   <div class="container-xl">
                     <div class="py-5">
                     <div class="row g-2">
@@ -673,5 +689,28 @@ Fancybox.bind("[data-fancybox]", {
       thumbnails.mount();
   </script>
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script>
+      function toggleColorPicker() {
+          var colorPicker = document.getElementById('colorPicker');
+
+          if (colorPicker.style.display === 'none') {
+              colorPicker.style.display = 'block';
+          } else {
+              colorPicker.style.display = 'none';
+          }
+      }
+
+      // Add an event listener to handle color changes
+      colorPicker.addEventListener('input', function() {
+          // Get the selected color value
+          var selectedColor = colorPicker.value;
+
+          // Log the selected color to the console
+          console.log("Selected color: " + selectedColor);
+
+          // Change the background color of the body
+          document.body.style.backgroundColor = selectedColor;
+      });
+  </script>
 </body>
 </html>

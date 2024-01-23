@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Color Input Example with Fixed Navbar and Icon Button</title>
     <link rel="stylesheet" href="./css/aos.css">
     <link rel="stylesheet" href="./css/icons/bootstrap-icons.css">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
@@ -11,83 +11,63 @@
     <link rel="stylesheet" href="./css/splide.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/socials.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-xVFS8KoV0jqz8n7XGE4z89QiIj4KL+f2IzFky+g+FQcZ8Foao5z6yCiW7l+AB8QH8/35IhtHrsJ1XPPcjp3UiFw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Style for the fixed navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            z-index: 1000;
+        }
+
+        /* Add some padding to the body to make room for the fixed navbar */
+      
+
+        /* Style for the icon button */
+      
+    </style>
 </head>
 <body>
 
+    <!-- Fixed Navbar -->
+    <div class="nav gradient rounded-end-circle d-block">
+        <button  onclick="toggleColorPicker()">
+          <i class="bi bi-gear h1"></i>
+        </button>
+        <input type="color" id="colorPicker" style="display: none;">
+    </div>
 
-        <div class="container-xl">
-            <a href="./img/team-02.jpg" data-fancybox data-caption="Single image"><img src="./img/team-02.jpg" alt="Slide 2" class="img-fluid"></a>
-        </div>
+    <!-- Color input element (initially hidden) -->
 
+    
 
-
-
-    <script src="./js/fancybox.umd.js"></script>
+    <!-- Script to handle the color selection and toggle color input visibility -->
     <script>
-Fancybox.bind("[data-fancybox]", {
-  on: {
-    done: (fancybox, slide) => {
-      if (fancybox.isCurrentSlide(slide)) {
-        console.log(
-          `The content of the current slide #${slide.index} is loaded and revealed`
-        );
-      } else {
-        console.log(
-          `The content of the slide #${slide.index} is preloaded and revealed`
-        );
-      }
-    },
-  },
-});
+        function toggleColorPicker() {
+            var colorPicker = document.getElementById('colorPicker');
+
+            if (colorPicker.style.display === 'none') {
+                colorPicker.style.display = 'block';
+            } else {
+                colorPicker.style.display = 'none';
+            }
+        }
+
+        // Add an event listener to handle color changes
+        colorPicker.addEventListener('input', function() {
+            // Get the selected color value
+            var selectedColor = colorPicker.value;
+
+            // Log the selected color to the console
+            console.log("Selected color: " + selectedColor);
+
+            // Change the background color of the body
+            document.body.style.backgroundColor = selectedColor;
+        });
     </script>
-    <script src="./js/splide.min.js"></script>
-    <script>
-      var main = new Splide('#main-slider', {
-          type: 'loop',
-          heightRatio: 1,
-          pagination: false,
-          arrows: false,
-          cover: true,
-      });
-      var main2 = new Splide('#main-slider2', {
-          type: 'loop',
-          heightRatio: 1,
-          pagination: false,
-          arrows: false,
-          cover: true,
-      });
 
-      var thumbnails = new Splide('#thumbnail-slider', {
-        type:"loop",
-          rewind: true,
-          fixedWidth: 104,
-          fixedHeight: 58,
-          isNavigation: true,
-          gap: 10,
-          focus: 'center',
-          pagination: false,
-          cover: true,
-          autoplay: {
-                delay: 200,
-            },
-          dragMinThreshold: {
-              mouse: 4,
-              touch: 10,
-          },
-          breakpoints: {
-              640: {
-                  fixedWidth: 66,
-                  fixedHeight: 38,
-              },
-          },
-      });
-
-      main.sync(thumbnails);
-      main.mount();
-      main2.sync(thumbnails);
-      main2.mount();
-      thumbnails.mount();
-  </script>
-    <script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
