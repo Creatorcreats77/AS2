@@ -16,7 +16,6 @@ body{
     background: rgb(97,8,185);
     background: linear-gradient(90deg, rgba(97,8,185,1) 0%, rgba(55,8,185,1) 52%, rgba(38,0,255,1) 100%);
 }
-
 .bg-image {
     background-image: url(../img/banner-bg.jpg);
     background-color: #cccccc;
@@ -25,21 +24,16 @@ body{
     background-position: center;
     background-size: cover;
 }
-
-
-
 ::placeholder {
     color: rgba(255, 255, 255, 0.4);
-  }
-  .nav {
+}
+.nav {
         position: fixed; 
         top: 270px;
         left: 0;
         padding: 10px;
         z-index: 1000;
-    }
-
-
+}
 .bg-image2 {
     background-image: url(../img/pricing-bg.jpg);
     background-color: #cccccc;
@@ -63,47 +57,44 @@ body{
 .cursor:hover{
     cursor:grab;
 }
-
+.rainbow:hover{
+    background-image: linear-gradient(90deg, #00ccff 0%, #0a6ec0 49%, #045f7a 80%, #08418b 100%);
+    animation:slidebg 2s linear infinite;
+ }
+ .rainbow-1:hover{
+     background-image: linear-gradient(90deg, #b22cff 0%, #5f0ac0 49%, #11369b 80%, #2252d4 100%);
+     animation:slidebg 2s linear infinite;
+  }
 @media screen and (max-width: 800px){ 
     .h6{
         font-size: small;
     };
 }
-
 @media screen and (min-width: 800px){ 
     .h6{
         font-size: medium;
     }; 
 }
-
 @media screen and (max-width: 800px){ 
     .h1{
         font-size: x-large;
     };
 }
-
-
 @media screen and (min-width: 800px){ 
     .h1{
         font-size: xx-large;
     }; 
 }
-
 @media screen and (max-width: 800px){ 
     .h3{
         font-size: large;
     };
 }
-
-
 @media screen and (min-width: 800px){ 
     .h3{
         font-size: x-large;
     }; 
 }
-
-/* HTML: <div class="loader"></div> */
-/* HTML: <div class="loader"></div> */
 .loader {
     --s: 20px;
     height: calc(var(--s)*0.9);
@@ -125,18 +116,6 @@ body{
  @keyframes l20 {
      90%,100% {background-size:100% 100%}
  }
-
-
-
-.rainbow:hover{
-   background-image: linear-gradient(90deg, #00ccff 0%, #0a6ec0 49%, #045f7a 80%, #08418b 100%);
-   animation:slidebg 2s linear infinite;
-}
-.rainbow-1:hover{
-    background-image: linear-gradient(90deg, #b22cff 0%, #5f0ac0 49%, #11369b 80%, #2252d4 100%);
-    animation:slidebg 2s linear infinite;
- }
-
 @keyframes slidebg {
   to {
     background-position:20vw;
